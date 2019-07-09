@@ -10,10 +10,14 @@ export const frontGuard: NavigationGuard = function (to, from, next) {
     next()
     return
   }
-  Vue.prototype.$auth.access(to.meta && to.meta.pid).then(() => {
-    next()
+  Vue.prototype.$auth.access(to.meta && to.meta.pid).then((ret: boolean) => {
+    if (ret) {
+      next()
+    } else {
+      next({ path: '/error/403' })
+      NP.done()
+    }
   }).catch(() => {
-    next({ path: '/error/403' })
     NP.done()
   })
 }
