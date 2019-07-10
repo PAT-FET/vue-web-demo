@@ -9,7 +9,7 @@
     "mock:start": "node ./mock/index.js"
   },
   "dependencies": {
-    "@pat-fet/web-vue-utils": "^0.1.3",
+    "@pat-fet/web-vue-utils": "^0.1.6",
     "core-js": "^2.6.5",
     "nprogress": "^0.2.0",
     "vua": "^0.7.7",
